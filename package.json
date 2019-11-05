@@ -1,0 +1,65 @@
+{
+  "name": "scss-7-in-1",
+  "description": "Generates SASS - 7 in 1 architecture (https://sass-guidelin.es/#the-7-1-pattern) quickly in your current directory.",
+  "version": "1.0.0",
+  "author": "Dharmen Shah",
+  "bin": {
+    "scss-7-in-1": "./bin/run"
+  },
+  "bugs": "https://github.com/shhdharmen/scss-7-in-1/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-autocomplete": "^0.1.4",
+    "@oclif/plugin-help": "^2",
+    "@oclif/plugin-not-found": "^1.2.3",
+    "@oclif/plugin-warn-if-update-available": "^1.7.0",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@oclif/test": "^1",
+    "@oclif/tslint": "^3",
+    "@types/chai": "^4",
+    "@types/mocha": "^5",
+    "@types/ncp": "^2.0.3",
+    "@types/node": "^12.12.5",
+    "chai": "^4",
+    "mocha": "^5",
+    "ncp": "^2.0.0",
+    "nyc": "^14",
+    "ts-node": "^8",
+    "tslint": "^5",
+    "typescript": "^3.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib"
+  ],
+  "homepage": "https://github.com/shhdharmen/scss-7-in-1",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "bin": "scss-7-in-1",
+    "plugins": [
+      "@oclif/plugin-not-found",
+      "@oclif/plugin-warn-if-update-available",
+      "@oclif/plugin-autocomplete"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shhdharmen/scss-7-in-1.git"
+  },
+  "scripts": {
+    "posttest": "tslint -p test -t stylish",
+    "prepack": "rm -rf lib && tsc -b",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\""
+  },
+  "types": "lib/index.d.ts"
+}
