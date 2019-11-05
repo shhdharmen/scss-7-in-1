@@ -23,6 +23,8 @@
 npx scss-7-in-1
 ```
 
+![usage](./main.gif)
+
 ### Options
 
 | Option  | Character | Usage                                                       | Description                                                                        |
