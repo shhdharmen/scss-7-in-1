@@ -1,6 +1,9 @@
 import { Command, flags } from '@oclif/command'
 import { ncp, Options } from 'ncp';
 import { join } from 'path';
+import chalk from 'chalk';
+import { get } from 'node-emoji';
+import * as Listr from 'listr';
 
 class Scss7In1 extends Command {
   static description = 'Generates SASS - 7 in 1 architecture (https://sass-guidelin.es/#the-7-1-pattern) quickly in your current directory.'
@@ -13,19 +16,23 @@ class Scss7In1 extends Command {
     write: flags.boolean({ char: 'w', description: 'Whether to overwrite existing files/folder or not', default: false })
   }
 
-  static args = [{ name: 'file' }]
-
   async run() {
     const { flags } = this.parse(Scss7In1)
     const destination = join(process.cwd(), flags.dir);
     const source = join(__dirname, 'content');
     const copyOptions: Options = { clobber: flags.write }
-    ncp(source, destination, copyOptions, (error) => {
-      if (error) {
-        return console.error(error);
+    const tasks = new Listr([
+      {
+        title: 'Copy Files and Folders',
+        task: () => ncp(source, destination, copyOptions, (error) => {
+          if (error) {
+            throw error;
+          }
+        })
       }
-      console.log('Done.');
-    })
+    ])
+    await tasks.run();
+    this.log(chalk.greenBright(get('white_check_mark') + chalk.bold('  DONE:') + ' SCSS 7-in-1 Pattern ' + chalk.italic.underline('(https://sass-guidelin.es/#the-7-1-pattern)') + ' created in directory: ' + chalk.italic.underline(destination) + '.'));
   }
 }
 

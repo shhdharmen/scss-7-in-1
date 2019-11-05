@@ -23,6 +23,15 @@
 npx scss-7-in-1
 ```
 
+### Options
+
+| Option  | Character | Usage                                                       | Description                                                                        |
+| ------- | --------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| version | v         | `npx scss-7-in-1 -v`, `npx scss-7-in-1 --version`           | Outputs versions                                                                   |
+| help    | h         | `npx scss-7-in-1 -h`, `npx scss-7-in-1 --help`              | Outputs help                                                                       |
+| dir     | d         | `npx scss-7-in-1 -d styles`, `npx scss-7-in-1 --dir=styles` | Directory name in which architecture will be created.<br>*Default Value: `styles`* |
+| write   | w         | `npx scss-7-in-1 -w`, `npx scss-7-in-1 --write`             | Overwrite contents, if folder exists.                                              |
+
 ## Author
 
 👤 **Dharmen Shah**
