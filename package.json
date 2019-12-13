@@ -1,7 +1,7 @@
 {
   "name": "scss-7-in-1",
   "description": "Generates SASS - 7 in 1 architecture (https://sass-guidelin.es/#the-7-1-pattern) quickly in your current directory.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Dharmen Shah",
   "bin": {
     "scss-7-in-1": "./bin/run"
