@@ -5,6 +5,8 @@ import chalk from 'chalk';
 import { get } from 'node-emoji';
 import * as Listr from 'listr';
 
+const source = join(__dirname, 'content');
+
 class Scss7In1 extends Command {
   static description = 'Generates SASS - 7 in 1 architecture (https://sass-guidelin.es/#the-7-1-pattern) quickly in your current directory.'
 
@@ -19,7 +21,6 @@ class Scss7In1 extends Command {
   async run() {
     const { flags } = this.parse(Scss7In1)
     const destination = join(process.cwd(), flags.dir);
-    const source = join(__dirname, 'content');
     const copyOptions: Options = { clobber: flags.write }
     const tasks = new Listr([
       {
