@@ -23,7 +23,7 @@ class Scss7In1 extends Command {
   async run() {
     const { flags } = this.parse(Scss7In1)
     const destination = join(process.cwd(), flags.dir);
-    const source = join(__dirname, 'content');
+    const source = join(__dirname, '..', 'src', 'content');
     const copyOptions: Options = { clobber: flags.write }
     const tasks = new Listr([
       {
