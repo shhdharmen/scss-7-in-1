@@ -45,7 +45,8 @@
   },
   "files": [
     "/bin",
-    "/lib"
+    "/lib",
+    "/src/content"
   ],
   "homepage": "https://github.com/shhdharmen/scss-7-in-1",
   "keywords": [

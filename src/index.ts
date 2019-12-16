@@ -5,9 +5,9 @@ import chalk from 'chalk';
 import { get } from 'node-emoji';
 import * as Listr from 'listr';
 
-const requireDir = require("require-dir");
+// const requireDir = require("require-dir");
 
-requireDir(join(__dirname, 'content'));
+// const content = requireDir(join(__dirname, 'content'));
 
 class Scss7In1 extends Command {
   static description = 'Generates SASS - 7 in 1 architecture (https://sass-guidelin.es/#the-7-1-pattern) quickly in your current directory.'
